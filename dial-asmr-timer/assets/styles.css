@@ -1,0 +1,322 @@
+:root {
+  color-scheme: light;
+  --ink: #2c1e18;
+  --muted: #756359;
+  --brass: #9d6b2f;
+  --brass-light: #d9b773;
+  --cream: #f8f1e4;
+  --paper: #fffaf1;
+  --line: rgba(76, 47, 31, 0.16);
+  --shadow: 0 28px 80px rgba(55, 31, 20, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 16% 4%, rgba(255, 255, 255, 0.95), transparent 28rem),
+    repeating-linear-gradient(92deg, rgba(136, 91, 45, 0.025) 0 1px, transparent 1px 23px),
+    linear-gradient(145deg, #f9f1e3, #efe2cc 62%, #f8f1e6);
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", sans-serif;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: #72502d;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.22em;
+}
+
+a:hover {
+  color: #38251b;
+}
+
+.shell {
+  width: min(1100px, calc(100% - 32px));
+  margin: 0 auto;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 28px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.brand {
+  color: var(--ink);
+  font-size: 0.8rem;
+  font-weight: 750;
+  letter-spacing: 0.22em;
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 18px;
+  font-size: 0.88rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(260px, 0.8fr);
+  align-items: center;
+  gap: clamp(42px, 8vw, 96px);
+  min-height: 650px;
+  padding: 80px 0 96px;
+}
+
+.eyebrow {
+  margin: 0 0 18px;
+  color: var(--brass);
+  font-size: 0.72rem;
+  font-weight: 750;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  font-weight: 600;
+  line-height: 1.08;
+}
+
+h1 {
+  max-width: 760px;
+  margin: 0;
+  font-size: clamp(3.2rem, 8vw, 6.8rem);
+  letter-spacing: -0.055em;
+}
+
+.lede {
+  max-width: 660px;
+  margin: 28px 0 0;
+  color: var(--muted);
+  font-size: clamp(1.08rem, 2vw, 1.32rem);
+}
+
+.dial-mark {
+  position: relative;
+  width: min(100%, 360px);
+  aspect-ratio: 1;
+  margin: auto;
+  border: 1px solid rgba(71, 43, 28, 0.36);
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 38% 28%, #fffdf6 0 10%, transparent 33%),
+    repeating-conic-gradient(from -1deg, rgba(47, 28, 19, 0.72) 0 0.6deg, transparent 0.6deg 6deg),
+    radial-gradient(circle, #f7ebd2 0 57%, #c7a269 57.5% 60%, #584034 60.5% 63%, #b38c57 64% 68%, #3a271f 69% 72%, transparent 72%);
+  box-shadow:
+    inset 0 0 0 10px rgba(255, 251, 239, 0.55),
+    inset 0 -24px 50px rgba(75, 39, 20, 0.12),
+    0 32px 55px rgba(58, 34, 23, 0.2);
+}
+
+.dial-mark::before {
+  content: "";
+  position: absolute;
+  inset: 24%;
+  border: 1px solid rgba(75, 44, 25, 0.24);
+  border-radius: 50%;
+  background: radial-gradient(circle at 38% 30%, #f3d99e, #a26e37 58%, #4e3225 100%);
+  box-shadow: inset 0 8px 18px rgba(255, 245, 216, 0.45), 0 10px 24px rgba(48, 28, 18, 0.24);
+}
+
+.dial-mark::after {
+  content: "D";
+  position: absolute;
+  inset: 37%;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(255, 235, 190, 0.55);
+  border-radius: 50%;
+  color: #f9e8bf;
+  background: #39251d;
+  font-family: "Iowan Old Style", Georgia, serif;
+  font-size: clamp(2rem, 5vw, 3.7rem);
+  box-shadow: 0 8px 18px rgba(43, 25, 17, 0.28);
+}
+
+.section {
+  padding: 88px 0;
+  border-top: 1px solid var(--line);
+}
+
+.section-heading {
+  max-width: 680px;
+  margin: 0 0 48px;
+}
+
+.section h2,
+.article h1 {
+  margin: 0 0 16px;
+  font-size: clamp(2.4rem, 5vw, 4.6rem);
+  letter-spacing: -0.04em;
+}
+
+.section-heading p,
+.article .intro {
+  color: var(--muted);
+  font-size: 1.1rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.card {
+  padding: 30px;
+  border: 1px solid rgba(85, 53, 32, 0.14);
+  border-radius: 24px;
+  background: rgba(255, 251, 243, 0.72);
+  box-shadow: 0 16px 40px rgba(57, 34, 22, 0.06);
+  backdrop-filter: blur(12px);
+}
+
+.card h3 {
+  margin: 0 0 12px;
+  font-size: 1.45rem;
+}
+
+.card p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.materials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+.material {
+  padding: 10px 16px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255, 252, 245, 0.7);
+  font-size: 0.88rem;
+}
+
+.article {
+  width: min(760px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 82px 0 110px;
+}
+
+.article .meta {
+  margin: -2px 0 40px;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.article h2 {
+  margin: 48px 0 14px;
+  font-size: 1.65rem;
+  letter-spacing: -0.02em;
+}
+
+.article p,
+.article li {
+  color: #4f4139;
+}
+
+.article ul,
+.article ol {
+  padding-left: 1.35rem;
+}
+
+.article li + li {
+  margin-top: 0.55rem;
+}
+
+.callout {
+  margin: 32px 0;
+  padding: 24px 26px;
+  border: 1px solid rgba(137, 91, 39, 0.22);
+  border-radius: 18px;
+  background: rgba(255, 250, 239, 0.72);
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 34px 0 48px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.84rem;
+}
+
+.footer p {
+  margin: 0;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+@media (max-width: 760px) {
+  .hero {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    padding: 64px 0 76px;
+  }
+
+  .dial-mark {
+    width: min(78vw, 320px);
+    grid-row: 1;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 520px) {
+  .nav {
+    align-items: flex-start;
+  }
+
+  .nav-links {
+    gap: 10px 14px;
+  }
+
+  .article {
+    padding-top: 56px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
